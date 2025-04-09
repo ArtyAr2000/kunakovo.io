@@ -1,0 +1,1427 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кунаково | Яркая база отдыха в Ессентуках</title>
+    <meta name="description" content="Самая веселая база отдыха с аттракционами, озерами и вкусной едой!">
+    
+    <!-- Шрифты -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1a3a2a;       /* Темно-зеленый */
+            --primary-light: #2d5a45; /* Светлее на 20% */
+            --secondary: #c2a55a;     /* Золотистый */
+            --secondary-light: #d8c07a;
+            --background: #f5efe6;    /* Основной бежевый фон */
+            --card-bg: #e8dfd1;      /* Фон карточек */
+            --dark: #2a2e24;         /* Темный текст */
+            --text: #3a3a3a;         /* Основной текст */
+            --light-text: #f5efe6;   /* Светлый текст */
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            --transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--text);
+            background-color: var(--background);
+            line-height: 1.7;
+            overflow-x: hidden;
+            font-weight: 400;
+        }
+        
+        h1, h2, h3 {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 800;
+            color: var(--primary);
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 900;
+        }
+        
+        h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            margin-bottom: 1.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        p {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Шапка */
+        header {
+            background: rgba(26, 58, 42, 0.95);
+            color: var(--light-text);
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            backdrop-filter: blur(5px);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            color: var(--light-text);
+        }
+        
+        .logo i {
+            color: var(--secondary);
+            margin-right: 12px;
+            font-size: 1.5rem;
+            transition: var(--transition);
+        }
+        
+        .logo:hover i {
+            transform: rotate(15deg) scale(1.1);
+        }
+        
+        /* Бургер меню */
+        .burger-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+            background: transparent;
+            border: none;
+            color: var(--light-text);
+            z-index: 1001;
+            transition: var(--transition);
+        }
+        
+        .burger-menu:hover {
+            color: var(--secondary);
+        }
+        
+        /* Навигация */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+        
+        nav ul li a {
+            color: var(--light-text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            padding: 8px 0;
+            position: relative;
+            font-size: 1.1rem;
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover {
+            color: var(--secondary);
+        }
+        
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+        
+        /* Герой секция */
+        .hero {
+    height: 100vh;
+    min-height: 700px;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), 
+                url('images/photo_2024-04-19_16-57-14 — копия (2).jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    margin-top: 0;
+    color: var(--light-text);
+    text-align: center;
+    padding-top: 80px;
+}
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 30px;
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero h1 {
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    margin-bottom: 1.5rem;
+    color: white;
+    text-shadow: 
+        -2px -2px 0 var(--primary),
+        2px -2px 0 var(--primary),
+        -2px 2px 0 var(--primary),
+        2px 2px 0 var(--primary),
+        3px 3px 10px rgba(0, 0, 0, 0.8);
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero p {
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    margin-bottom: 3rem;
+    color: white;
+    text-shadow: 
+        -1px -1px 0 rgba(0, 0, 0, 0.7),
+        1px -1px 0 rgba(0, 0, 0, 0.7),
+        -1px 1px 0 rgba(0, 0, 0, 0.7),
+        1px 1px 0 rgba(0, 0, 0, 0.7),
+        2px 2px 5px rgba(0, 0, 0, 0.5);
+    font-weight: 400;
+}
+        
+        /* Кнопки */
+        .btn {
+            display: inline-block;
+            padding: 1rem 2.5rem;
+            background: var(--primary);
+            color: var(--light-text);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-family: 'Montserrat', sans-serif;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            font-size: 1.1rem;
+            border: 2px solid transparent;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            background: var(--primary-light);
+        }
+        
+        .btn:active {
+            transform: translateY(-1px);
+        }
+        
+        .btn-secondary {
+            background: var(--secondary);
+            color: var(--dark);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--secondary-light);
+            color: var(--dark);
+        }
+        
+       
+        
+        .fade-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+        
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Секции */
+        .section {
+            padding: 6rem 0;
+            position: relative;
+        }
+        
+        .section-bg {
+            background-color: var(--card-bg);
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .section-bg:hover {
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+        
+        .section-title h2 {
+            position: relative;
+            display: inline-block;
+            color: var(--primary);
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -12px;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        .section-title p {
+            font-size: 1.3rem;
+            color: var(--text);
+            max-width: 700px;
+            margin: 0 auto 2rem;
+        }
+        
+       
+        .feature-list {
+            margin: 3rem 0;
+        }
+        
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 10px;
+            transition: var(--transition);
+            background: rgba(255, 255, 255, 0.3);
+        }
+        
+        .feature-item:hover {
+            background: rgba(255, 255, 255, 0.5);
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            flex-shrink: 0;
+            margin-right: 1.5rem;
+            color: var(--secondary);
+            font-size: 1.8rem;
+            min-width: 50px;
+            text-align: center;
+        }
+        
+        .feature-text h3 {
+            margin-bottom: 0.8rem;
+            color: var(--primary);
+        }
+        
+        .feature-text p {
+            color: var(--text);
+            font-size: 1.1rem;
+        }
+        
+        .divider-short {
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            margin: 2rem auto;
+            border-radius: 3px;
+        }
+        
+        .quote-box {
+            background: rgba(26, 58, 42, 0.05);
+            border-left: 4px solid var(--secondary);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-style: italic;
+            position: relative;
+            border-radius: 8px;
+        }
+        
+        .quote-box::before {
+            content: '"';
+            position: absolute;
+            top: 10px;
+            left: 15px;
+            font-size: 4rem;
+            color: rgba(194, 165, 90, 0.1);
+            font-family: serif;
+            line-height: 1;
+        }
+        
+        .quote-author {
+            text-align: right;
+            font-weight: 600;
+            color: var(--primary);
+            margin-top: 1.5rem;
+            font-style: normal;
+        }
+        
+        /* Карусель изображений */
+        .carousel-container {
+            position: relative;
+            max-width: 100%;
+            margin: 4rem auto;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+        }
+        
+        .carousel {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item {
+            min-width: 100%;
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            height: 500px;
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .carousel-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .carousel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.2rem;
+        }
+        
+        .carousel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255, 255, 255, 0.8);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            z-index: 10;
+            transition: var(--transition);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .carousel-btn:hover {
+            background: rgba(255, 255, 255, 0.95);
+            transform: translateY(-50%) scale(1.1);
+        }
+        
+        .carousel-prev {
+            left: 25px;
+        }
+        
+        .carousel-next {
+            right: 25px;
+        }
+        
+        .carousel-indicators {
+            display: flex;
+            justify-content: center;
+            margin-top: 1.5rem;
+            gap: 0.8rem;
+        }
+        
+        .carousel-indicator {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        
+        .carousel-indicator.active {
+            background: var(--primary);
+            transform: scale(1.2);
+        }
+        
+        /* Карточки */
+        .card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            border: none;
+            position: relative;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+        
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+        
+        .card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-img {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .card-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .card:hover .card-img img {
+            transform: scale(1.1);
+        }
+        
+        .card-content {
+            padding: 2rem;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .card h3 {
+            margin-bottom: 1rem;
+            color: var(--primary);
+            font-size: 1.5rem;
+        }
+        
+        .card p {
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+            flex-grow: 1;
+        }
+        
+        .card ul {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+        
+        .card ul li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .card ul li i {
+            color: var(--secondary);
+            margin-right: 10px;
+            font-size: 1.1rem;
+            margin-top: 3px;
+        }
+        
+        /* Разделитель */
+        .divider {
+            height: 1px;
+            background: linear-gradient(to right, transparent, var(--secondary), transparent);
+            margin: 3rem 0;
+            width: 100%;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 992px) {
+            .section {
+                padding: 5rem 0;
+            }
+            
+            .section-bg {
+                padding: 2rem;
+            }
+            
+            .carousel-item {
+                height: 400px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+                position: fixed;
+                top: 80px;
+                left: 20px;
+                right: 20px;
+                background: var(--card-bg);
+                border-radius: 10px;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+                padding: 1.5rem;
+                max-height: 70vh;
+                overflow-y: auto;
+                transform: translateY(-150%);
+                transition: transform 0.3s ease-out;
+                z-index: 999;
+                display: block !important;
+            }
+            
+            nav ul.show {
+                transform: translateY(0);
+            }
+            
+            nav ul li a {
+                color: var(--primary) !important;
+                padding: 0.8rem;
+                display: block;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                font-weight: 600;
+            }
+            
+            nav ul li a::after {
+                display: none;
+            }
+            
+            .burger-menu {
+                display: block !important;
+            }
+            
+            .section {
+                padding: 4rem 0;
+            }
+            
+            .carousel-item {
+                height: 350px;
+            }
+            
+            .feature-item {
+                flex-direction: column;
+                text-align: center;
+                align-items: center;
+            }
+            
+            .feature-icon {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-bg {
+                padding: 1.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .carousel-item {
+                height: 300px;
+            }
+            
+            .card-img {
+                height: 200px;
+            }
+            
+            .card-content {
+                padding: 1.5rem;
+            }
+        }
+        
+        /* Затемнение фона меню */
+        .menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 998;
+            display: none;
+            backdrop-filter: blur(3px);
+        }
+        
+        /* Кнопка Подробнее */
+        .more-btn-container {
+            text-align: center;
+            margin-top: 3rem;
+        }
+        
+        /* Кнопка "Наверх" */
+        #backToTop {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            cursor: pointer;
+            z-index: 99;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        #backToTop:hover {
+            background: var(--primary-light);
+            transform: translateY(-5px);
+        }
+        
+        /* Сетка карточек */
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        /* Затемненные секции */
+        .dark-section {
+            background: linear-gradient(rgba(26, 58, 42, 0.9), rgba(26, 58, 42, 0.9));
+            color: var(--light-text);
+        }
+        
+        .dark-section .section-title h2,
+        .dark-section .section-title p,
+        .dark-section h3 {
+            color: var(--light-text);
+        }
+        
+        .dark-section .section-title h2::after {
+            background: var(--secondary);
+        }
+        
+        .dark-section .card {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--light-text);
+        }
+        
+        .dark-section .card h3 {
+            color: var(--secondary);
+        }
+        /* Анимации при прокрутке */
+.fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+    will-change: transform, opacity;
+}
+
+.fade-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Мобильное меню */
+@media (max-width: 768px) {
+    nav ul {
+        display: none;
+        position: fixed;
+        top: 80px;
+        left: 20px;
+        right: 20px;
+        background: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        padding: 1.5rem;
+        max-height: 70vh;
+        overflow-y: auto;
+        transform: translateY(-150%);
+        transition: transform 0.3s ease-out;
+        z-index: 999;
+    }
+    
+    nav ul.show {
+        transform: translateY(0);
+        display: block !important;
+    }
+    
+    .burger-menu {
+        display: block !important;
+    }
+}
+
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    display: none;
+    backdrop-filter: blur(3px);
+}
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-tree"></i>
+                    <span>Кунаково</span>
+                </div>
+                <nav>
+                    <ul id="navMenu">
+                        <li><a href="#about">О базе</a></li>
+                        <li><a href="#living">Проживание</a></li>
+                        <li><a href="#fun">Развлечения</a></li>
+                        <li><a href="#food">Где поесть</a></li>
+                        <li><a href="#events">Мероприятия</a></li>
+                        <li><a href="#price">Цены</a></li>
+                    </ul>
+                    <button class="burger-menu" id="burgerMenu" aria-label="Меню" aria-expanded="false">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </nav>
+            </div>
+        </div>
+    </header>
+    
+  <!-- Герой секция -->
+<section class="hero">
+    <div class="hero-content">
+        <h1>Отдых, который запомнится!</h1>
+        <p>Приключения, веселье и комфорт на базе "Кунаково"</p>
+    </div>
+</section>
+    
+    <!-- О базе -->
+    <section id="about" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Добро пожаловать в <span class="text-highlight">Кунаково</span>!</h2>
+                <p>Место, где рождаются самые яркие воспоминания</p>
+                <div class="divider-short"></div>
+            </div>
+            
+            <!-- Карусель изображений -->
+            <div class="carousel-container">
+                <div class="carousel" id="aboutCarousel">
+                    <div class="carousel-item">
+                        <img src="images/IMG_8907_1.jpg" alt="Территория базы" loading="lazy">
+                        <div class="carousel-caption">Просторная территория базы отдыха</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="images/IMG_2964.jpeg" alt="Домики у озера" loading="lazy">
+                        <div class="carousel-caption">Уютные домики у воды</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Пляжная зона" loading="lazy">
+                        <div class="carousel-caption">Чистый пляж с шезлонгами</div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel('aboutCarousel', -1)">❮</button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel('aboutCarousel', 1)">❯</button>
+                <div class="carousel-indicators" id="aboutIndicators"></div>
+            </div>
+            
+            <div class="section-bg animate">
+                <p>
+                    База отдыха <span class="text-highlight">"Кунаково"</span> - это настоящий рай для любителей <span class="text-highlight">активного</span> и <span class="text-highlight">спокойного</span> отдыха. 
+                    На территории площадью <strong>5 гектаров</strong> вас ждет удивительное сочетание природы и комфорта.
+                </p>
+                
+                <div class="feature-list">
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Уютные домики</h3>
+                            <p>7 деревянных домиков с террасами и 10 комфортабельных номеров для любого состава гостей</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-swimming-pool"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Два живописных озера</h3>
+                            <p>Одно - для купания с песчаным пляжем, второе - для рыбалки (карп, форель, карась)</p>
+                        </div>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <div class="feature-icon">
+                            <i class="fas fa-child"></i>
+                        </div>
+                        <div class="feature-text">
+                            <h3>Аттракционы и развлечения</h3>
+                            <p>Картинг, тюбинг, батуты и детские площадки для разных возрастов</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="quote-box">
+                    <p>Кунаково - это место, куда хочется возвращаться снова и снова. Здесь каждый найдет что-то свое: тишину природы, активные развлечения или просто возможность провести время с близкими.</p>
+                    <div class="quote-author">— Анна и Максим, постоянные гости</div>
+                </div>
+                
+                <div class="more-btn-container">
+                    <a href="/about" class="btn">Подробнее о базе</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Проживание -->
+    <section id="living" class="section dark-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Проживание</h2>
+                <p>Комфорт и уют для всей семьи</p>
+                <div class="divider-short"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Деревянные домики" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Деревянные домики</h3>
+                        <p>7 уютных домиков с террасами, рассчитанные на 2-6 человек. В каждом: спальни, гостиная, кухня и санузел.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Ортопедические матрасы</li>
+                            <li><i class="fas fa-check"></i> Телевизор и Wi-Fi</li>
+                            <li><i class="fas fa-check"></i> Мини-кухня с посудой</li>
+                        </ul>
+                        <a href="#prices" class="btn btn-secondary" style="margin-top: auto;">Узнать цены</a>
+                    </div>
+                </div>
+                
+                <div class="card animate" style="animation-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Гостиница" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Гостиница</h3>
+                        <p>10 современных номеров с ежедневной уборкой. В каждом номере: удобная кровать, телевизор, Wi-Fi и душ.</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Ежедневная уборка</li>
+                            <li><i class="fas fa-check"></i> Кондиционер</li>
+                            <li><i class="fas fa-check"></i> Вид на озеро</li>
+                        </ul>
+                        <a href="#prices" class="btn btn-secondary" style="margin-top: auto;">Узнать цены</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карусель изображений -->
+            <div class="carousel-container">
+                <div class="carousel" id="livingCarousel">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Интерьер домика" loading="lazy">
+                        <div class="carousel-caption">Уютный интерьер деревянного домика</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Терраса домика" loading="lazy">
+                        <div class="carousel-caption">Просторные террасы с видом на природу</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Номер в гостинице" loading="lazy">
+                        <div class="carousel-caption">Комфортабельные номера в гостинице</div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel('livingCarousel', -1)">❮</button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel('livingCarousel', 1)">❯</button>
+                <div class="carousel-indicators" id="livingIndicators"></div>
+            </div>
+            
+            <div class="more-btn-container">
+                <a href="/living" class="btn btn-secondary">Подробнее о проживании</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Развлечения -->
+    <section id="fun" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Развлечения</h2>
+                <p>Веселье для детей и взрослых</p>
+                <div class="divider-short"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Озеро для купания" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Озеро для купания</h3>
+                        <p>Чистое озеро с песчаным пляжем, шезлонгами и зонтиками. Постепенный заход в воду идеален для детей.</p>
+                        <div style="display: flex; align-items: center; margin-top: 1rem;">
+                            <i class="fas fa-life-ring" style="color: var(--secondary); margin-right: 10px;"></i>
+                            <span>Работают спасатели</span>
+                        </div>
+                        <a href="#fun-details" class="btn" style="margin-top: auto;">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="card animate" style="animation-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Рыбалка" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Рыбацкое озеро</h3>
+                        <p>Специально зарыбленный водоем с карпом, карасем и форелью. Можно арендовать снасти или привезти свои.</p>
+                        <div style="display: flex; align-items: center; margin-top: 1rem;">
+                            <i class="fas fa-fish" style="color: var(--secondary); margin-right: 10px;"></i>
+                            <span>Беседки для разделки улова</span>
+                        </div>
+                        <a href="#fun-details" class="btn" style="margin-top: auto;">Подробнее</a>
+                    </div>
+                </div>
+                
+                <div class="card animate" style="animation-delay: 0.4s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Аттракционы" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Детские аттракционы</h3>
+                        <p>Батутный комплекс, надувные горки, лабиринты и площадки для разных возрастов. Работают аниматоры.</p>
+                        <div style="display: flex; align-items: center; margin-top: 1rem;">
+                            <i class="fas fa-child" style="color: var(--secondary); margin-right: 10px;"></i>
+                            <span>Безопасные конструкции</span>
+                        </div>
+                        <a href="#fun-details" class="btn" style="margin-top: auto;">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карусель изображений -->
+            <div class="carousel-container">
+                <div class="carousel" id="funCarousel">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Картинг" loading="lazy">
+                        <div class="carousel-caption">Картинг для взрослых и детей</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Тюбинг" loading="lazy">
+                        <div class="carousel-caption">Тюбинговая горка для веселья</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Детская площадка" loading="lazy">
+                        <div class="carousel-caption">Детские игровые площадки</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Вечерние развлечения" loading="lazy">
+                        <div class="carousel-caption">Вечерние развлечения у костра</div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel('funCarousel', -1)">❮</button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel('funCarousel', 1)">❯</button>
+                <div class="carousel-indicators" id="funIndicators"></div>
+            </div>
+            
+            <div class="more-btn-container">
+                <a href="/entertainment" class="btn">Подробнее о развлечениях</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Где поесть -->
+    <section id="food" class="section dark-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Где поесть</h2>
+                <p>Вкусная еда и приятная атмосфера</p>
+                <div class="divider-short"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Кафе Виктория" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Кафе "Виктория"</h3>
+                        <p>Главное кафе базы с домашней кухней. В меню: завтраки, комплексные обеды, выпечка и десерты. Есть детское меню.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><i class="fas fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> <strong>Часы работы:</strong> 8:00 - 22:00</p>
+                            <p><i class="fas fa-umbrella-beach" style="color: var(--secondary); margin-right: 10px;"></i> Летняя веранда с видом на озеро</p>
+                        </div>
+                        <a href="#menu" class="btn btn-secondary" style="margin-top: auto;">Посмотреть меню</a>
+                    </div>
+                </div>
+                
+                <div class="card animate" style="animation-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Шашлыково" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>"Шашлыково"</h3>
+                        <p>Мангальная зона с профессиональными поварами. Готовим на углях: шашлыки, стейки, рыбу и овощи.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><i class="fas fa-clock" style="color: var(--secondary); margin-right: 10px;"></i> <strong>Часы работы:</strong> 12:00 - 23:00</p>
+                            <p><i class="fas fa-fire" style="color: var(--secondary); margin-right: 10px;"></i> Можно принести свои продукты</p>
+                        </div>
+                        <a href="#menu" class="btn btn-secondary" style="margin-top: auto;">Посмотреть меню</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карусель изображений -->
+            <div class="carousel-container">
+                <div class="carousel" id="foodCarousel">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Интерьер кафе" loading="lazy">
+                        <div class="carousel-caption">Уютный интерьер кафе "Виктория"</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Мангальная зона" loading="lazy">
+                        <div class="carousel-caption">Мангальная зона "Шашлыково"</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Блюда" loading="lazy">
+                        <div class="carousel-caption">Вкусные блюда домашней кухни</div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel('foodCarousel', -1)">❮</button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel('foodCarousel', 1)">❯</button>
+                <div class="carousel-indicators" id="foodIndicators"></div>
+            </div>
+            
+            <div class="more-btn-container">
+                <a href="/food" class="btn btn-secondary">Подробнее о питании</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Мероприятия -->
+    <section id="events" class="section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Мероприятия</h2>
+                <p>Организуем незабываемые события</p>
+                <div class="divider-short"></div>
+            </div>
+            
+            <div class="cards-grid">
+                <div class="card animate">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Площадь Дружбы" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Площадь Дружбы</h3>
+                        <p>Главная площадка базы вмещает до 200 человек. Идеально подходит для фестивалей, концертов и массовых мероприятий.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><i class="fas fa-music" style="color: var(--secondary); margin-right: 10px;"></i> Сцена и звуковое оборудование</p>
+                            <p><i class="fas fa-lightbulb" style="color: var(--secondary); margin-right: 10px;"></i> Профессиональное освещение</p>
+                        </div>
+                        <a href="#booking" class="btn" style="margin-top: auto;">Забронировать</a>
+                    </div>
+                </div>
+                
+                <div class="card animate" style="animation-delay: 0.2s;">
+                    <div class="card-img">
+                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Центральная площадь" loading="lazy">
+                    </div>
+                    <div class="card-content">
+                        <h3>Центральная площадь</h3>
+                        <p>Уютное пространство с амфитеатром для мероприятий на 50-80 человек. Часто используется для свадеб и дней рождений.</p>
+                        <div style="margin-top: 1rem;">
+                            <p><i class="fas fa-glass-cheers" style="color: var(--secondary); margin-right: 10px;"></i> Идеально для торжеств</p>
+                            <p><i class="fas fa-umbrella" style="color: var(--secondary); margin-right: 10px;"></i> Навес на случай дождя</p>
+                        </div>
+                        <a href="#booking" class="btn" style="margin-top: auto;">Забронировать</a>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Карусель изображений -->
+            <div class="carousel-container">
+                <div class="carousel" id="eventsCarousel">
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Свадьба на базе" loading="lazy">
+                        <div class="carousel-caption">Романтические свадьбы на природе</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Корпоратив" loading="lazy">
+                        <div class="carousel-caption">Корпоративные мероприятия</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="День рождения" loading="lazy">
+                        <div class="carousel-caption">Дни рождения для детей и взрослых</div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Фестиваль" loading="lazy">
+                        <div class="carousel-caption">Музыкальные фестивали и концерты</div>
+                    </div>
+                </div>
+                <button class="carousel-btn carousel-prev" onclick="moveCarousel('eventsCarousel', -1)">❮</button>
+                <button class="carousel-btn carousel-next" onclick="moveCarousel('eventsCarousel', 1)">❯</button>
+                <div class="carousel-indicators" id="eventsIndicators"></div>
+            </div>
+            
+            <div class="more-btn-container">
+                <a href="/events" class="btn">Подробнее о мероприятиях</a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Подвал -->
+    <footer style="background-color: var(--primary); color: var(--light-text); padding: 4rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Кунаково</h3>
+                    <p>Самая веселая база отдыха в Ессентуках с аттракционами, озерами и вкусной едой!</p>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Контакты</h3>
+                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> г. Ессентуки, х. Томатный</p>
+                    <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +7 (928) 123-45-67</p>
+                    <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@kunakovo.ru</p>
+                </div>
+                
+                <div>
+                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Мы в соцсетях</h3>
+                    <div style="display: flex; gap: 1.5rem;">
+                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-vk"></i></a>
+                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-instagram"></i></a>
+                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-telegram"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+                <p>&copy; 2023 База отдыха "Кунаково". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Кнопка "Наверх" -->
+    <button id="backToTop" aria-label="Наверх">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    
+    <script>
+     // Меню
+const burgerMenu = document.getElementById('burgerMenu');
+const navMenu = document.getElementById('navMenu');
+const menuOverlay = document.createElement('div');
+menuOverlay.className = 'menu-overlay';
+document.body.appendChild(menuOverlay);
+
+// Обработчики меню
+burgerMenu.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const isExpanded = burgerMenu.getAttribute('aria-expanded') === 'true';
+    burgerMenu.setAttribute('aria-expanded', !isExpanded);
+    navMenu.classList.toggle('show');
+    menuOverlay.style.display = isExpanded ? 'none' : 'block';
+    burgerMenu.innerHTML = isExpanded ? '<i class="fas fa-bars"></i>' : '<i class="fas fa-times"></i>';
+});
+
+menuOverlay.addEventListener('click', () => {
+    burgerMenu.setAttribute('aria-expanded', 'false');
+    navMenu.classList.remove('show');
+    menuOverlay.style.display = 'none';
+    burgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
+});
+
+// Закрытие при клике на ссылку
+document.querySelectorAll('nav a').forEach(link => {
+    link.addEventListener('click', () => {
+        burgerMenu.setAttribute('aria-expanded', 'false');
+        navMenu.classList.remove('show');
+        menuOverlay.style.display = 'none';
+        burgerMenu.innerHTML = '<i class="fas fa-bars"></i>';
+    });
+});
+
+// Карусели
+const carousels = {
+    aboutCarousel: { currentIndex: 0, items: document.querySelectorAll('#aboutCarousel .carousel-item').length },
+    livingCarousel: { currentIndex: 0, items: document.querySelectorAll('#livingCarousel .carousel-item').length },
+    funCarousel: { currentIndex: 0, items: document.querySelectorAll('#funCarousel .carousel-item').length },
+    foodCarousel: { currentIndex: 0, items: document.querySelectorAll('#foodCarousel .carousel-item').length },
+    eventsCarousel: { currentIndex: 0, items: document.querySelectorAll('#eventsCarousel .carousel-item').length }
+};
+
+// Функции карусели
+function initCarouselIndicators() {
+    for (const carouselId in carousels) {
+        const indicatorsContainer = document.getElementById(carouselId.replace('Carousel', 'Indicators'));
+        const itemsCount = carousels[carouselId].items;
+        
+        for (let i = 0; i < itemsCount; i++) {
+            const indicator = document.createElement('div');
+            indicator.className = 'carousel-indicator';
+            if (i === 0) indicator.classList.add('active');
+            indicator.addEventListener('click', () => {
+                moveCarousel(carouselId, i - carousels[carouselId].currentIndex);
+            });
+            indicatorsContainer.appendChild(indicator);
+        }
+    }
+}
+
+function moveCarousel(carouselId, direction) {
+    const carousel = document.getElementById(carouselId);
+    const carouselData = carousels[carouselId];
+    const itemsCount = carouselData.items;
+    
+    if (typeof direction === 'number') {
+        carouselData.currentIndex += direction;
+    } else {
+        carouselData.currentIndex = direction;
+    }
+    
+    if (carouselData.currentIndex >= itemsCount) {
+        carouselData.currentIndex = 0;
+    } else if (carouselData.currentIndex < 0) {
+        carouselData.currentIndex = itemsCount - 1;
+    }
+    
+    carousel.style.transform = `translateX(-${carouselData.currentIndex * 100}%)`;
+    updateIndicators(carouselId);
+}
+
+function updateIndicators(carouselId) {
+    const indicators = document.querySelectorAll(`#${carouselId.replace('Carousel', 'Indicators')} .carousel-indicator`);
+    indicators.forEach((indicator, index) => {
+        if (index === carousels[carouselId].currentIndex) {
+            indicator.classList.add('active');
+        } else {
+            indicator.classList.remove('active');
+        }
+    });
+}
+
+// Автопрокрутка карусели
+function startAutoCarousel() {
+    for (const carouselId in carousels) {
+        setInterval(() => {
+            moveCarousel(carouselId, 1);
+        }, 8000);
+    }
+}
+
+// Анимация при прокрутке
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        } else {
+            entry.target.classList.remove('visible');
+        }
+    });
+}, {
+    threshold: 0.15
+});
+
+// Кнопка "Наверх"
+const backToTopButton = document.getElementById('backToTop');
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'flex';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Инициализация при загрузке страницы
+document.addEventListener('DOMContentLoaded', () => {
+    initCarouselIndicators();
+    startAutoCarousel();
+    
+    // Анимация при прокрутке
+    document.querySelectorAll('.section, .section-title, .card, .feature-item, .carousel-container').forEach((el) => {
+        el.classList.add('fade-up');
+        observer.observe(el);
+    });
+});
+    </script>
+</body>
+</html>
