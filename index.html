@@ -20,8 +20,8 @@
             --primary-light: #2d5a45; /* Светлее на 20% */
             --secondary: #c2a55a;     /* Золотистый */
             --secondary-light: #d8c07a;
-            --background: #f5efe6;    /* Основной бежевый фон */
-            --card-bg: #e8dfd1;      /* Фон карточек */
+            --background: #e6d9c2;    /* Основной бежевый фон */
+            --card-bg: #dbc8a9;      /* Фон карточек */
             --dark: #2a2e24;         /* Темный текст */
             --text: #3a3a3a;         /* Основной текст */
             --light-text: #f5efe6;   /* Светлый текст */
@@ -484,26 +484,30 @@
             right: 25px;
         }
         
-        .carousel-indicators {
-            display: flex;
-            justify-content: center;
-            margin-top: 1.5rem;
-            gap: 0.8rem;
-        }
-        
-        .carousel-indicator {
-            width: 14px;
-            height: 14px;
-            border-radius: 50%;
-            background: rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        
-        .carousel-indicator.active {
-            background: var(--primary);
-            transform: scale(1.2);
-        }
+       .carousel-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem;
+    gap: 0.8rem;
+    padding: 1rem 0; /* Добавляем отступы сверху и снизу */
+    margin-bottom: 1rem; /* Добавляем отступ снизу */
+}
+
+.carousel-indicator {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent; /* Добавляем прозрачную границу */
+}
+
+.carousel-indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
+    border-color: var(--secondary); /* Добавляем border для активного индикатора */
+}
         
         /* Карточки */
         .card {
@@ -844,6 +848,7 @@
                         <li><a href="#about">О базе</a></li>
                         <li><a href="#living">Проживание</a></li>
                         <li><a href="#fun">Развлечения</a></li>
+                        <li><a href="#fishing">Рыбалка и беседки</a></li> <!-- Новый пункт -->
                         <li><a href="#food">Где поесть</a></li>
                         <li><a href="#events">Мероприятия</a></li>
                         <li><a href="#price">Цены</a></li>
@@ -1039,20 +1044,7 @@
                     </div>
                 </div>
                 
-                <div class="card animate" style="animation-delay: 0.2s;">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Рыбалка" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Рыбацкое озеро</h3>
-                        <p>Специально зарыбленный водоем с карпом, карасем и форелью. Можно арендовать снасти или привезти свои.</p>
-                        <div style="display: flex; align-items: center; margin-top: 1rem;">
-                            <i class="fas fa-fish" style="color: var(--secondary); margin-right: 10px;"></i>
-                            <span>Беседки для разделки улова</span>
-                        </div>
-                        <a href="#fun-details" class="btn" style="margin-top: auto;">Подробнее</a>
-                    </div>
-                </div>
+               
                 
                 <div class="card animate" style="animation-delay: 0.4s;">
                     <div class="card-img">
@@ -1100,9 +1092,77 @@
             </div>
         </div>
     </section>
-    
+<!-- Рыбалка и беседки -->
+<section id="fishing" class="section dark-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Рыбалка и беседки</h2>
+            <p>Отличный отдых на природе</p>
+            <div class="divider-short"></div>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card animate">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Рыбалка" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Рыбацкое озеро</h3>
+                    <p>Специально зарыбленный водоем с карпом, карасем и форелью. Можно арендовать снасти или привезти свои.</p>
+                    <ul>
+                        <li><i class="fas fa-fish"></i> Различные виды рыб</li>
+                        <li><i class="fas fa-chair"></i> Удобные места для рыбалки</li>
+                        <li><i class="fas fa-shopping-basket"></i> Прокат снастей</li>
+                    </ul>
+                    <a href="#prices" class="btn btn-secondary" style="margin-top: auto;">Узнать цены</a>
+                </div>
+            </div>
+            
+            <div class="card animate" style="animation-delay: 0.2s;">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Беседки" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Лесные беседки</h3>
+                    <p>Уютные беседки в тени деревьев для отдыха большой компанией. Каждая беседка оборудована мангалом.</p>
+                    <ul>
+                        <li><i class="fas fa-tree"></i> Расположены в лесной зоне</li>
+                        <li><i class="fas fa-fire"></i> Мангальная зона</li>
+                        <li><i class="fas fa-users"></i> Вместимость до 15 человек</li>
+                    </ul>
+                    <a href="#prices" class="btn btn-secondary" style="margin-top: auto;">Узнать цены</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карусель изображений -->
+        <div class="carousel-container">
+            <div class="carousel" id="fishingCarousel">
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Рыбалка на озере" loading="lazy">
+                    <div class="carousel-caption">Рыбалка на живописном озере</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Беседки в лесу" loading="lazy">
+                    <div class="carousel-caption">Уютные беседки в лесной зоне</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Мангальная зона" loading="lazy">
+                    <div class="carousel-caption">Оборудованные мангальные зоны</div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="moveCarousel('fishingCarousel', -1)">❮</button>
+            <button class="carousel-btn carousel-next" onclick="moveCarousel('fishingCarousel', 1)">❯</button>
+            <div class="carousel-indicators" id="fishingIndicators"></div>
+        </div>
+
+        <div class="more-btn-container">
+            <a href="/fishing" class="btn btn-secondary">Подробнее о рыбалке и беседках</a>
+        </div>
+    </div>
+</section>
     <!-- Где поесть -->
-    <section id="food" class="section dark-section">
+    <section id="food" class="section"></section>
         <div class="container">
             <div class="section-title">
                 <h2>Где поесть</h2>
@@ -1169,109 +1229,109 @@
         </div>
     </section>
     
-    <!-- Мероприятия -->
-    <section id="events" class="section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Мероприятия</h2>
-                <p>Организуем незабываемые события</p>
-                <div class="divider-short"></div>
-            </div>
+   
             
-            <div class="cards-grid">
-                <div class="card animate">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Площадь Дружбы" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Площадь Дружбы</h3>
-                        <p>Главная площадка базы вмещает до 200 человек. Идеально подходит для фестивалей, концертов и массовых мероприятий.</p>
-                        <div style="margin-top: 1rem;">
-                            <p><i class="fas fa-music" style="color: var(--secondary); margin-right: 10px;"></i> Сцена и звуковое оборудование</p>
-                            <p><i class="fas fa-lightbulb" style="color: var(--secondary); margin-right: 10px;"></i> Профессиональное освещение</p>
-                        </div>
-                        <a href="#booking" class="btn" style="margin-top: auto;">Забронировать</a>
-                    </div>
+           <!-- Мероприятия -->
+           <section id="events" class="section dark-section">
+    <div class="container">
+        <div class="section-title">
+            <h2>Мероприятия</h2>
+            <p>Организуем незабываемые события</p>
+            <div class="divider-short"></div>
+        </div>
+        
+        <div class="cards-grid">
+            <div class="card animate">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Площадь Дружбы" loading="lazy">
                 </div>
-                
-                <div class="card animate" style="animation-delay: 0.2s;">
-                    <div class="card-img">
-                        <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Центральная площадь" loading="lazy">
-                    </div>
-                    <div class="card-content">
-                        <h3>Центральная площадь</h3>
-                        <p>Уютное пространство с амфитеатром для мероприятий на 50-80 человек. Часто используется для свадеб и дней рождений.</p>
-                        <div style="margin-top: 1rem;">
-                            <p><i class="fas fa-glass-cheers" style="color: var(--secondary); margin-right: 10px;"></i> Идеально для торжеств</p>
-                            <p><i class="fas fa-umbrella" style="color: var(--secondary); margin-right: 10px;"></i> Навес на случай дождя</p>
-                        </div>
-                        <a href="#booking" class="btn" style="margin-top: auto;">Забронировать</a>
+                <div class="card-content">
+                    <h3>Площадь Дружбы</h3>
+                    <p>Главная площадка базы вмещает до 200 человек. Идеально подходит для фестивалей, концертов и массовых мероприятий.</p>
+                    <div style="margin-top: 1rem;">
+                        <p><i class="fas fa-music" style="color: var(--secondary); margin-right: 10px;"></i> Сцена и звуковое оборудование</p>
+                        <p><i class="fas fa-lightbulb" style="color: var(--secondary); margin-right: 10px;"></i> Профессиональное освещение</p>
                     </div>
                 </div>
             </div>
             
-            <!-- Карусель изображений -->
-            <div class="carousel-container">
-                <div class="carousel" id="eventsCarousel">
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Свадьба на базе" loading="lazy">
-                        <div class="carousel-caption">Романтические свадьбы на природе</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Корпоратив" loading="lazy">
-                        <div class="carousel-caption">Корпоративные мероприятия</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="День рождения" loading="lazy">
-                        <div class="carousel-caption">Дни рождения для детей и взрослых</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Фестиваль" loading="lazy">
-                        <div class="carousel-caption">Музыкальные фестивали и концерты</div>
+            <div class="card animate" style="animation-delay: 0.2s;">
+                <div class="card-img">
+                    <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Центральная площадь" loading="lazy">
+                </div>
+                <div class="card-content">
+                    <h3>Центральная площадь</h3>
+                    <p>Уютное пространство с амфитеатром для мероприятий на 50-80 человек. Часто используется для свадеб и дней рождений.</p>
+                    <div style="margin-top: 1rem;">
+                        <p><i class="fas fa-glass-cheers" style="color: var(--secondary); margin-right: 10px;"></i> Идеально для торжеств</p>
+                        <p><i class="fas fa-umbrella" style="color: var(--secondary); margin-right: 10px;"></i> Навес на случай дождя</p>
                     </div>
                 </div>
-                <button class="carousel-btn carousel-prev" onclick="moveCarousel('eventsCarousel', -1)">❮</button>
-                <button class="carousel-btn carousel-next" onclick="moveCarousel('eventsCarousel', 1)">❯</button>
-                <div class="carousel-indicators" id="eventsIndicators"></div>
-            </div>
-            
-            <div class="more-btn-container">
-                <a href="/events" class="btn">Подробнее о мероприятиях</a>
             </div>
         </div>
-    </section>
+        
+        <!-- Карусель изображений -->
+        <div class="carousel-container">
+            <div class="carousel" id="eventsCarousel">
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Свадьба на базе" loading="lazy">
+                    <div class="carousel-caption">Романтические свадьбы на природе</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1582719471383-2d3f3a5d7a1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Корпоратив" loading="lazy">
+                    <div class="carousel-caption">Корпоративные мероприятия</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="День рождения" loading="lazy">
+                    <div class="carousel-caption">Дни рождения для детей и взрослых</div>
+                </div>
+                <div class="carousel-item">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80" alt="Фестиваль" loading="lazy">
+                    <div class="carousel-caption">Музыкальные фестивали и концерты</div>
+                </div>
+            </div>
+            <button class="carousel-btn carousel-prev" onclick="moveCarousel('eventsCarousel', -1)">❮</button>
+            <button class="carousel-btn carousel-next" onclick="moveCarousel('eventsCarousel', 1)">❯</button>
+            <div class="carousel-indicators" id="eventsIndicators"></div>
+        </div>
+        
+        <div class="more-btn-container">
+            <a href="/events" class="btn">Подробнее о мероприятиях</a>
+        </div>
+    </div>
+</section>
     
-    <!-- Подвал -->
-    <footer style="background-color: var(--primary); color: var(--light-text); padding: 4rem 0;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
-                <div>
-                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Кунаково</h3>
-                    <p>Самая веселая база отдыха в Ессентуках с аттракционами, озерами и вкусной едой!</p>
-                </div>
-                
-                <div>
-                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Контакты</h3>
-                    <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> г. Ессентуки, х. Томатный</p>
-                    <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +7 (928) 123-45-67</p>
-                    <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@kunakovo.ru</p>
-                </div>
-                
-                <div>
-                    <h3 style="margin-bottom: 1.5rem; color: var(--secondary);">Мы в соцсетях</h3>
-                    <div style="display: flex; gap: 1.5rem;">
-                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-vk"></i></a>
-                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-instagram"></i></a>
-                        <a href="#" style="color: var(--light-text); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-telegram"></i></a>
-                    </div>
-                </div>
+   <!-- Подвал -->
+<footer style="background-color: var(--card-bg); color: var(--text); padding: 4rem 0;">
+    <div class="container">
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; margin-bottom: 3rem;">
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Кунаково</h3>
+                <p>Самая веселая база отдыха в Ессентуках с аттракционами, озерами и вкусной едой!</p>
             </div>
             
-            <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-                <p>&copy; 2023 База отдыха "Кунаково". Все права защищены.</p>
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Контакты</h3>
+                <p><i class="fas fa-map-marker-alt" style="margin-right: 10px; color: var(--secondary);"></i> г. Ессентуки, х. Томатный</p>
+                <p><i class="fas fa-phone" style="margin-right: 10px; color: var(--secondary);"></i> +7 (928) 123-45-67</p>
+                <p><i class="fas fa-envelope" style="margin-right: 10px; color: var(--secondary);"></i> info@kunakovo.ru</p>
+            </div>
+            
+            <div>
+                <h3 style="margin-bottom: 1.5rem; color: var(--primary);">Мы в соцсетях</h3>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#" style="color: var(--primary); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-vk"></i></a>
+                    <a href="#" style="color: var(--primary); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: var(--primary); font-size: 1.5rem; transition: var(--transition);"><i class="fab fa-telegram"></i></a>
+                </div>
             </div>
         </div>
-    </footer>
+        
+        <div style="text-align: center; padding-top: 2rem; border-top: 1px solid rgba(0, 0, 0, 0.1);">
+            <p>&copy; 2023 База отдыха "Кунаково". Все права защищены.</p>
+        </div>
+    </div>
+</footer>
     
     <!-- Кнопка "Наверх" -->
     <button id="backToTop" aria-label="Наверх">
@@ -1318,6 +1378,7 @@ const carousels = {
     aboutCarousel: { currentIndex: 0, items: document.querySelectorAll('#aboutCarousel .carousel-item').length },
     livingCarousel: { currentIndex: 0, items: document.querySelectorAll('#livingCarousel .carousel-item').length },
     funCarousel: { currentIndex: 0, items: document.querySelectorAll('#funCarousel .carousel-item').length },
+    fishingCarousel: { currentIndex: 0, items: document.querySelectorAll('#fishingCarousel .carousel-item').length }, // Новая карусель
     foodCarousel: { currentIndex: 0, items: document.querySelectorAll('#foodCarousel .carousel-item').length },
     eventsCarousel: { currentIndex: 0, items: document.querySelectorAll('#eventsCarousel .carousel-item').length }
 };
